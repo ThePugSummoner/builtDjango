@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Django Website</title>
+</head>
+<body>
+    <h1>Hello {{name | upper}}!</h1>
+    <h1>Hello {{name | lower}}!</h1>
+    <h1>Hello {{name | length}}!</h1>
+    <h1>Hello {{name | first}}!</h1>
+    <h1>Hello {{name | last}}!</h1>
+    {% comment "optional_note" %}
+    Heres you can put any comment
+    {% endcomment %}
+    {% include "about.html" %}
+</body>
+</html>

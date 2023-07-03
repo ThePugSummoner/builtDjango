@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>List of Languages</h1> 
+<ul> 
+    {% for lang in langs %} 
+    <li>{{ lang }}</li> 
+    {% endfor %} 
+</ul> 
+<ul> 
+    {% for lang in langs %} 
+    <li>{{ forloop.counter }} : {{ lang }}</li> 
+    {% endfor %}  
+</ul> 
+<ul> 
+    {% for lang in langs %} 
+    <li>{{ forloop.revcounter }} : {{ lang }}</li> 
+    {% endfor %} 
+  
+</ul> 
+<ul> 
+    {% for lang in langs %} 
+    <li>{{ forloop.first }} : {{ lang }}</li> 
+    {% endfor %} 
+</ul> 
+<ul> 
+    {% for lang in langs %} 
+    <li>{{ forloop.last }} : {{ lang }}</li> 
+    {% endfor %} 
+</ul>
+<h1>Nested loops</h1> 
+    {% for key, values in dct.items %} 
+    <p style="padding-left: 20px;">{{ forloop.parentloop.counter }} : {{ key }}</p> 
+    <ul> 
+    {% for value in values %} 
+    <li> {{ value }}</li> 
+    {% endfor %} 
+</ul> 
+{% endfor %}
+{% comment "optional_note" %}
+    
+    {% block %}
+    Defines a block that can be overridden by child templates. This tag will be discussed when you learn about template inheritance.
+    
+    {% csrf_token %}
+    This tag is used in a form template as protection to prevent Cross Site Request Forgeries (CSRF). This tag generates a token on the server-side to make sure to cross-check that the incoming requests do not contain the token. If found, they are not executed.
+
+
+    {% include }%
+    Loads a template and renders it with the current context. This is a way of "including" other templates within a template. The template name can either be a variable or a hard-coded (quoted) string, in either single or double quotes.
+    {% include "sample.html" %}
+
+    {% with %}
+    This tag sets a local variable that is available between {% with %}and {% endwidth %} tags.
+    {% with rate = 5 %} 
+    Interest = {amt}*{{ rate }} 
+    {% endwith %}
+    
+{% endcomment %}
+</body>
+</html>

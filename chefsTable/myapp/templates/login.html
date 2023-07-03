@@ -1,0 +1,14 @@
+
+    {% extends "base.html" %} 
+
+    {% block contents %} 
+        <h2  style="text-align: center;">Login Form appears here</h2> 
+    {% endblock %} 
+        {% block footer %} 
+        {{ block.super }}
+        <!--Notice that the block.super tag has been used. It is similar to Python’s super()function 
+            whereby you access the parent class methods in a child class. 
+            In the same way, the contents of the footer block will be rendered on the login page. 
+            Now, include additional text in the block as a part of the header, for the login page.--> 
+        <h4 style="text-align: right;">Designed By: Alexa Designs Ltd</h4>
+    {% endblock %}
