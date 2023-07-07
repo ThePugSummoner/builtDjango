@@ -31,3 +31,21 @@ urlpatterns = [
     path('update/<int:pk>', EmployeeUpdate.as_view(), name = 'EmployeeUpdate'),
     path('delete/<int:pk>', EmployeeDelete.as_view(), name = 'EmployeeDelete'), 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+""" 'str': Matches any non-empty string consisting of any character except a slash ('/'). This is the default converter if no other converter is specified.
+Example: path('category/<str:slug>/', views.category_detail)
+
+'int': Matches an integer value.
+Example: path('post/<int:pk>/', views.post_detail)
+
+'slug': Matches a string consisting of ASCII letters, numbers, hyphens, or underscores, used for human-readable URLs.
+Example: path('article/<slug:slug>/', views.article_detail)
+
+'uuid': Matches a universally unique identifier (UUID) in either hyphenated or non-hyphenated format.
+Example: path('profile/<uuid:user_id>/', views.profile_detail)
+
+'path': Matches any non-empty string consisting of any character, including a slash ('/'). This converter is useful for capturing an entire URL path segment.
+Example: path('page/<path:url_path>/', views.page_detail)
+
+'str': Matches any non-empty string consisting of any character except a slash ('/'). This is the same as the default converter mentioned earlier.
+Example: path('search/<str:query>/', views.search_results)"""
